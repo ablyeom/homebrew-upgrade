@@ -1,0 +1,17 @@
+language: ruby
+
+os: osx
+
+rvm: system
+
+before_install:
+  - brew update
+  - brew --version
+  - sudo gem install rubocop
+  - mkdir -p /usr/local/Homebrew/Library/Taps/ablyeom/homebrew-upgrade
+  - cp -rf . /usr/local/Homebrew/Library/Taps/ablyeom/homebrew-upgrade
+  - cd /usr/local/Homebrew/Library/Taps/ablyeom/homebrew-upgrade
+
+script:
+  - rubocop
+  - brew bu -y

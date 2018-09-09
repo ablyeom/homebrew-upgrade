@@ -1,0 +1,10 @@
+#!/bin/sh
+
+BREW=`which brew`
+
+"$BREW" bu
+
+if [ $? -ne 0 ]; then
+  BREW tap ablyeom/brew-upgrade
+  "$BREW" bu
+fi
